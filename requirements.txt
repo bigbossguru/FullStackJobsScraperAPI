@@ -1,0 +1,8 @@
+Django>=3.2,<3.3
+djangorestframework>=3.13
+django-cors-headers
+gunicorn>=20.1.0
+beautifulsoup4
+lxml
+requests
+whitenoise

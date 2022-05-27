@@ -1,0 +1,105 @@
+{
+  "languages": ["python", "javascript"],
+  "sites": {
+    "jobs": {
+      "page_count": 3,
+      "url": ["https://www.jobs.cz/prace/?q%5B0%5D={language}&page={page}"],
+      "tags": {
+        "list": { "tag": "div", "class": "standalone search-list__item" },
+        "element": {
+          "title": {
+            "tag": "a",
+            "class": "search-list__main-info__title__link"
+          },
+          "company": {
+            "tag": "span",
+            "class": "search-list__secondary-info--label notranslate"
+          },
+          "address": {
+            "tag": "span",
+            "class": "search-list__secondary-info--label"
+          },
+          "salary": {
+            "tag": "span",
+            "class": "search-list__tags__label search-list__tags__salary--label"
+          }
+        }
+      }
+    },
+
+    "profesia": {
+      "page_count": 3,
+      "url": [
+        "https://www.profesia.cz/prace/ceska-republika/?gclid=EAIaIQobChMIoryU1cT_9wIVdgIGAB0QxQRhEAAYASAAEgLFpvD_BwE&search_anywhere={language}&page_num={page}"
+      ],
+      "tags": {
+        "list": { "tag": "li", "class": "list-row" },
+        "element": {
+          "title": { "tag": "span", "class": "title" },
+          "company": {
+            "tag": "span",
+            "class": "employer"
+          },
+          "address": {
+            "tag": "span",
+            "class": "job-location"
+          },
+          "salary": {
+            "tag": "span",
+            "class": "label label-bordered green half-margin-on-top"
+          }
+        }
+      }
+    },
+
+    "prace": {
+      "page_count": null,
+      "url": [
+        "https://www.prace.cz/hledat/?searchForm%5Blocality_codes%5D=C56&searchForm%5Bprofs%5D={language}&searchForm%5Bother%5D=&searchForm%5Bemployment_type_codes%5D%5B%5D=201300001&searchForm%5Bemployment_type_codes%5D%5B%5D=201300002&searchForm%5Bemployment_type_codes%5D%5B%5D=201300004&searchForm%5Bminimal_salary%5D=&searchForm%5Beducation%5D=&searchForm%5Bsuitable_for%5D=&searchForm%5Bsearch%5D="
+      ],
+      "tags": {
+        "list": { "tag": "li", "class": "search-result__advert" },
+        "element": {
+          "title": { "tag": "a", "class": "link" },
+          "company": {
+            "tag": "div",
+            "class": "search-result__advert__box__item search-result__advert__box__item--company"
+          },
+          "address": {
+            "tag": "div",
+            "class": "search-result__advert__box__item search-result__advert__box__item search-result__advert__box__item--location"
+          },
+          "salary": {
+            "tag": "span",
+            "class": "search-result__advert__box__item search-result__advert__box__item--salary"
+          }
+        }
+      }
+    },
+
+    "startupjobs": {
+      "page_count": 3,
+      "url": [
+        "https://www.startupjobs.cz/nabidky/strana-{page}?superinput={language}"
+      ],
+      "tags": {
+        "list": { "tag": "article", "class": "article" },
+        "element": {
+          "title": { "tag": "h3", "class": "text-base sm:text-lg font-normal" },
+          "company": {
+            "tag": "img",
+            "class": "alt"
+          },
+          "address": {
+            "tag": "div",
+            "class": "mr-1 inline"
+          },
+          "salary": {
+            "tag": null,
+            "class": null
+          }
+        }
+      }
+    }
+  }
+}
