@@ -1,13 +1,14 @@
 {
   "languages": ["python", "javascript"],
-  "sites": {
-    "jobs": {
+  "sites": [
+    {
+      "name": "jobs.cz",
       "page_count": 3,
-      "url": ["https://www.jobs.cz/prace/?q%5B0%5D={language}&page={page}"],
+      "url": "https://www.jobs.cz/prace/?q%5B0%5D={language}&page={page}",
       "tags": {
         "list": { "tag": "div", "class": "standalone search-list__item" },
         "element": {
-          "title": {
+          "position": {
             "tag": "a",
             "class": "search-list__main-info__title__link"
           },
@@ -27,15 +28,14 @@
       }
     },
 
-    "profesia": {
+    {
+      "name": "profesia.cz",
       "page_count": 3,
-      "url": [
-        "https://www.profesia.cz/prace/ceska-republika/?gclid=EAIaIQobChMIoryU1cT_9wIVdgIGAB0QxQRhEAAYASAAEgLFpvD_BwE&search_anywhere={language}&page_num={page}"
-      ],
+      "url": "https://www.profesia.cz/prace/ceska-republika/?gclid=EAIaIQobChMIoryU1cT_9wIVdgIGAB0QxQRhEAAYASAAEgLFpvD_BwE&search_anywhere={language}&page_num={page}",
       "tags": {
         "list": { "tag": "li", "class": "list-row" },
         "element": {
-          "title": { "tag": "span", "class": "title" },
+          "position": { "tag": "span", "class": "title" },
           "company": {
             "tag": "span",
             "class": "employer"
@@ -52,15 +52,14 @@
       }
     },
 
-    "prace": {
-      "page_count": null,
-      "url": [
-        "https://www.prace.cz/hledat/?searchForm%5Blocality_codes%5D=C56&searchForm%5Bprofs%5D={language}&searchForm%5Bother%5D=&searchForm%5Bemployment_type_codes%5D%5B%5D=201300001&searchForm%5Bemployment_type_codes%5D%5B%5D=201300002&searchForm%5Bemployment_type_codes%5D%5B%5D=201300004&searchForm%5Bminimal_salary%5D=&searchForm%5Beducation%5D=&searchForm%5Bsuitable_for%5D=&searchForm%5Bsearch%5D="
-      ],
+    {
+      "name": "prace.cz",
+      "page_count": 1,
+      "url": "https://www.prace.cz/hledat/?searchForm%5Blocality_codes%5D=C56&searchForm%5Bprofs%5D={language}&searchForm%5Bother%5D=&searchForm%5Bemployment_type_codes%5D%5B%5D=201300001&searchForm%5Bemployment_type_codes%5D%5B%5D=201300002&searchForm%5Bemployment_type_codes%5D%5B%5D=201300004&searchForm%5Bminimal_salary%5D=&searchForm%5Beducation%5D=&searchForm%5Bsuitable_for%5D=&searchForm%5Bsearch%5D=",
       "tags": {
         "list": { "tag": "li", "class": "search-result__advert" },
         "element": {
-          "title": { "tag": "a", "class": "link" },
+          "position": { "tag": "a", "class": "link" },
           "company": {
             "tag": "div",
             "class": "search-result__advert__box__item search-result__advert__box__item--company"
@@ -77,15 +76,17 @@
       }
     },
 
-    "startupjobs": {
+    {
+      "name": "startupjobs.cz",
       "page_count": 3,
-      "url": [
-        "https://www.startupjobs.cz/nabidky/strana-{page}?superinput={language}"
-      ],
+      "url": "https://www.startupjobs.cz/nabidky/strana-{page}?superinput={language}",
       "tags": {
         "list": { "tag": "article", "class": "article" },
         "element": {
-          "title": { "tag": "h3", "class": "text-base sm:text-lg font-normal" },
+          "position": {
+            "tag": "h3",
+            "class": "text-base sm:text-lg font-normal"
+          },
           "company": {
             "tag": "img",
             "class": "alt"
@@ -101,5 +102,5 @@
         }
       }
     }
-  }
+  ]
 }
