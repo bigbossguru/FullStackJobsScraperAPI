@@ -1,0 +1,49 @@
+<section>
+  <div class="container text-center">
+    <h3>
+      Table with all list of open work in CZ <br />
+      For these programming languages Python and JavaScript
+    </h3>
+    <p>Jobs.cz, Prace.cz, Startupjobs.cz, Profesia.cz, ....</p>
+    <br />
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search..."
+        aria-label="Search..."
+        aria-describedby="button-addon2"
+      />
+      <button
+        class="btn btn-outline-secondary"
+        type="button"
+        id="button-addon2"
+      >
+        Search
+      </button>
+    </div>
+    <br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Position</th>
+          <th scope="col">Company</th>
+          <th scope="col">Location</th>
+          <th scope="col">Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for job in jobs %}
+        <tr>
+          <th scope="row">{{ job.id }}</th>
+          <td>{{ job.position }}</td>
+          <td>{{ job.company }}</td>
+          <td>{{ job.address }}</td>
+          <td>{{ job.salary }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>

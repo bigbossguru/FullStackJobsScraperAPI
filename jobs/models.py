@@ -10,6 +10,3 @@ class Job(models.Model):
 
     def __str__(self):
         return f"{self.position} {self.company} {self.address}"
-
-    class Meta:
-        ordering = ["-create_date"]

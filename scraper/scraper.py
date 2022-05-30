@@ -18,13 +18,3 @@ def scrapers() -> dict:
     for scrap in scrapers_objects:
         for obj in scrap.prepare_data():
             yield obj
-
-
-# if __name__ == "__main__":
-
-#     BASE_DIR = Path(__file__).resolve().parent
-#     cfg = ConfigFile(BASE_DIR, debug=True)
-
-#     if cfg.debug:
-#         # Only for DEBUG mode
-#         debugging(cfg)

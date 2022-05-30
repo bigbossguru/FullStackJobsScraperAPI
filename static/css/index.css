@@ -2,4 +2,34 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: black;
+}
+
+.title {
+  font-size: 45px;
+  text-align: center;
+}
+
+.subtitle {
+  color: rgb(162, 163, 163);
+  font-size: 25px;
+  text-align: center;
+}
+
+.mybtn {
+  display: inline-block;
+  background-color: hsl(250, 69%, 61%);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+.mybtn:hover {
+  color: hsl(250, 57%, 53%);
+}
+
+.mybtn--flex {
+  display: inline-flex;
+  align-items: center;
 }
