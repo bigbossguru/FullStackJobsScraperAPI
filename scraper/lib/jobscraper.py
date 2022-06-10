@@ -49,3 +49,10 @@ class JobsCZScraper(ScraperBase):
 
                 if all([position, company, address]):
                     yield _object
+
+
+class PraceCZScraper(ScraperBase):
+    def prepare_data(self) -> dict:
+        for sets_data in self.receive_content_from_service():
+            for data in sets_data:
+                _object = dict.fromkeys(["position", "company", "address", "salary"], None)
