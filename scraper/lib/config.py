@@ -1,7 +1,7 @@
-import os
 from pathlib import Path
-import json
 from typing import Callable
+import os
+import json
 
 
 def validator_service_name(func: Callable):
@@ -56,6 +56,10 @@ class ConfigFile:
 
     def get_sites(self) -> list[dict]:
         return self.config["sites"]
+    
+    @property
+    def get_lang(self) -> list[str]:
+        return self.config["languages"]
 
     @validator_service_name
     def get_service_by_name(self, service_name: str) -> dict | None:
