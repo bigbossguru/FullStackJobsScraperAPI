@@ -1,6 +1,7 @@
 # Standart Python library
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+from logging import Logger
 
 # Library for webscraper
 import requests
@@ -13,6 +14,7 @@ from .config import ConfigFile
 class ScraperBase(ABC):
     config: ConfigFile
     service_name: str
+    logger: Logger
 
     def receive_content_from_service(self) -> ResultSet:
         for url in self.config.get_service_by_name(self.service_name).get("urls"):
@@ -27,7 +29,7 @@ class ScraperBase(ABC):
 
 class JobsCZScraper(ScraperBase):
     def prepare_data(self) -> dict:
-
+        self.logger.info('JobsCZ prepare data')
         for sets_data in self.receive_content_from_service():
             for data in sets_data:
                 _object = dict.fromkeys(["position", "company", "address", "salary"], None)
@@ -37,7 +39,7 @@ class JobsCZScraper(ScraperBase):
                 address = data.find_all(**self.config.get_elem_object_tag_classname(self.service_name, "address"))
                 salary = data.find(**self.config.get_elem_object_tag_classname(self.service_name, "salary"))
 
-                if position and any(lang in position for lang in self.config.get_lang):
+                if position and any(lang.lower() in str(position).lower() for lang in self.config.get_lang):
                     _object["position"] = position.text.strip()
                 if salary:
                     _object["salary"] = salary.text.strip()
