@@ -31,6 +31,7 @@
           <th scope="col">Company</th>
           <th scope="col">Location</th>
           <th scope="col">Salary</th>
+          <th scope="col">Last date</th>
         </tr>
       </thead>
       <tbody>
@@ -41,6 +42,7 @@
           <td>{{ job.company }}</td>
           <td>{{ job.address }}</td>
           <td>{{ job.salary }}</td>
+          <td>{{ job.create_date }}</td>
         </tr>
         {% endfor %}
       </tbody>

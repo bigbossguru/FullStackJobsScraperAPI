@@ -37,7 +37,7 @@ class JobsCZScraper(ScraperBase):
                 address = data.find_all(**self.config.get_elem_object_tag_classname(self.service_name, "address"))
                 salary = data.find(**self.config.get_elem_object_tag_classname(self.service_name, "salary"))
 
-                if position:
+                if position and any(lang in position for lang in self.config.get_lang):
                     _object["position"] = position.text.strip()
                 if salary:
                     _object["salary"] = salary.text.strip()
