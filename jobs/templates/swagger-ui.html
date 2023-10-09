@@ -16,32 +16,18 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/index.css' %}"
-    />
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" /> -->
   </head>
 
   <body>
-    <div class="mt-3 d-grid gap-2 col-6 mx-auto">
-      <a href="/" class="btn btn-primary" role="button"> Go Home </a>
-    </div>
-    <h1 class="mt-2 text-center">Jobs Info API</h1>
-    <p class="subtitle" class="text-center">
-      A simple API which provides information about open vacancies from
-      different web portals and aggregate them here
-    </p>
+    {% include 'components/navbar.html' with title="Jobs Desc API" desc=False extra="A simple API which provides information about open vacancies from different web portals and aggregate them here" %}
     <div id="swagger-ui"></div>
     <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script>
       const ui = SwaggerUIBundle({
         url: "{% url 'schema' %}",
         dom_id: "#swagger-ui",
-        presets: [
-          SwaggerUIBundle.presets.apis,
-          SwaggerUIBundle.SwaggerUIStandalonePreset,
-        ],
+        presets: [SwaggerUIBundle.presets.apis, SwaggerUIBundle.SwaggerUIStandalonePreset],
         layout: "BaseLayout",
         requestInterceptor: (request) => {
           request.headers["X-CSRFToken"] = "{{ csrf_token }}";

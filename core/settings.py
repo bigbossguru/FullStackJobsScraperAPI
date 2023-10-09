@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", 'change')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = ["scraperjobsapi.herokuapp.com"]
+ALLOWED_HOSTS = ["scraperjobsapi.herokuapp.com", "localhost", "127.0.0.1", "jobscraper-app.onrender.com"]
 
 
 # Application definition
@@ -129,7 +129,7 @@ STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "static/image")
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/img")
 MEDIA_URL = "/image/"
 
 # Default primary key field type
@@ -140,13 +140,13 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-    ],
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-    ],
+    # "DEFAULT_AUTHENTICATION_CLASSES": [
+    #     "rest_framework.authentication.BasicAuthentication",
+    #     "rest_framework.authentication.SessionAuthentication",
+    # ],
+    # "DEFAULT_PERMISSION_CLASSES": [
+    #     "rest_framework.permissions.IsAuthenticated",
+    # ],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
