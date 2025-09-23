@@ -1,7 +1,7 @@
-Django>=3.2,<3.3
-djangorestframework>=3.13
+Django
+djangorestframework
 django-cors-headers
-gunicorn>=20.1.0
+gunicorn
 beautifulsoup4
 lxml
 requests
